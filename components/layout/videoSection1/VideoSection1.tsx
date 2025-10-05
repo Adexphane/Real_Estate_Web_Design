@@ -1,8 +1,22 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import InfiniteSlider from "@/components/ui/InfiniteSlider";
 
 const VideoSection1 = () => {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is Tailwind's md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -13,27 +27,27 @@ const VideoSection1 = () => {
   const scale = useTransform(
     scrollYProgress,
     [0, 0.5, 0.7, 1],
-    [0.4, 1, 1, 0.7]
+    [0.4, 1, 1, 0.98]
   );
 
-  // Optional: Also transform border radius to go from rounded to sharp corners
+  // Transform border radius
   const borderRadius = useTransform(
     scrollYProgress,
     [0, 0.3, 0.7, 1],
-    [70, 0, 0, 70]
+    [100, 30, 30, 50]
   );
 
   return (
-    <div
+    <motion.div
       ref={containerRef}
-      className='relative flex h-screen items-center justify-center'
+      className='relative flex h-screen items-center justify-center '
     >
       <motion.div
         style={{
           scale,
           borderRadius,
         }}
-        className='relative w-[90vw] md:w-[100vw] h-[60vh] md:h-screen shadow-2xl flex items-center justify-center overflow-hidden'
+        className='relative w-[96vw] md:w-[100vw] h-[60vh] md:h-screen flex items-center justify-center overflow-hidden'
       >
         {/* Video Background */}
         <video
@@ -52,9 +66,15 @@ const VideoSection1 = () => {
         <div className='absolute top-0 left-0 w-full h-full bg-black/30' />
 
         {/* Content */}
-        <p className='relative z-10 text-white text-2xl font-bold'>Scale Box</p>
+        <InfiniteSlider
+          speed={10}
+          direction='right'
+          textSize='text-5xl'
+          textColor='text-white/90'
+          separator='⊙'
+        />
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
