@@ -33,12 +33,12 @@ const IconTag1 = ({
 
   return (
     <div
-      className={`flex gap-2 sm:gap-3 items-center bg-white/90 px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 rounded-2xl sm:rounded-3xl ${className}`}
+      className={`flex gap-2 sm:gap-3 items-center bg-white/90 px-3 py-2 sm:px-4 sm:py-3 md:px-4 md:py-3 rounded-2xl sm:rounded-3xl ${className}`}
       onClick={onClick}
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
     >
-      <div className='flex flex-col font-bold -space-y-1 text-left text-sm sm:text-base md:text-lg'>
+      <div className='flex flex-col font-bold -space-y-1 text-left text-sm  sm:text-base'>
         <p>{title}</p>
         <p>{subtitle}</p>
       </div>

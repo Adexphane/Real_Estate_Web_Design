@@ -18,7 +18,7 @@ interface IconBoxProps {
 
 export default function IconBox({
   icon: Icon,
-  size = { sm: 40, md: 48, lg: 55, xl: 60 },
+  size = { sm: 40, md: 38, lg: 45, xl: 50 },
   className = "",
   iconClassName = "",
   backgroundColor = "bg-black/5",
@@ -44,7 +44,7 @@ export default function IconBox({
       <div className={`${className} hidden sm:block md:hidden`}>
         <Icon
           size={sizes.md}
-          className={`p-2.5 ${backgroundColor} ${iconColor} rounded-full ${iconClassName}`}
+          className={`p-2 ${backgroundColor} ${iconColor} rounded-full ${iconClassName}`}
         />
       </div>
 
@@ -52,7 +52,7 @@ export default function IconBox({
       <div className={`${className} hidden md:block lg:hidden`}>
         <Icon
           size={sizes.lg}
-          className={`p-3 ${backgroundColor} ${iconColor} rounded-full ${iconClassName}`}
+          className={`p-2 ${backgroundColor} ${iconColor} rounded-full ${iconClassName}`}
         />
       </div>
 
@@ -60,7 +60,7 @@ export default function IconBox({
       <div className={`${className} hidden lg:block`}>
         <Icon
           size={sizes.xl}
-          className={`p-3.5 ${backgroundColor} ${iconColor} rounded-full ${iconClassName}`}
+          className={`p-2.5 ${backgroundColor} ${iconColor} rounded-full ${iconClassName}`}
         />
       </div>
     </>

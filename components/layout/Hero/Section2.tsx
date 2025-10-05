@@ -93,12 +93,12 @@ const Section2 = () => {
       </AnimatePresence>
 
       {/* Content Overlay */}
-      <div className='relative z-10 flex justify-between md:px-10 md:py-10 px-6 py-6'>
+      <div className='relative z-10 flex justify-between md:px-8 md:py-8 px-6 py-6'>
         <div
           style={{
             fontSize: "clamp(1rem, 1.1vw, 4rem)",
           }}
-          className='flex gap-8'
+          className='flex gap-2'
         >
           <motion.p
             initial={{ y: "50%", opacity: 0 }}
@@ -109,7 +109,7 @@ const Section2 = () => {
               delay: 0.3,
             }}
             style={{
-              width: "clamp(10rem, 12vw, 18rem)",
+              width: "clamp(10rem, 14vw, 13rem)",
             }}
             className='font-medium text-foreground'
           >
@@ -124,7 +124,7 @@ const Section2 = () => {
               delay: 0.3,
             }}
             style={{
-              width: "clamp(10rem, 12vw, 22rem)",
+              width: "clamp(10rem, 14vw, 24rem)",
             }}
             className='hidden sm:block lg:hidden xl:block font-medium w-60 text-foreground'
           >
@@ -171,7 +171,7 @@ const Section2 = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-all duration-300 ${
+              className={`w-4 h-4 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
                 index === currentIndex ? "bg-black/60" : "bg-black/20"
               }`}
               aria-label={`Go to slide ${index + 1}`}

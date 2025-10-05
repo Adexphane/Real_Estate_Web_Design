@@ -39,7 +39,7 @@ export default function IconButton({
             delay: 0.5,
           }}
           onClick={onClick}
-          className={`flex items-center gap-2 sm:gap-3 bg-black w-fit rounded-full p-1.5 pr-3 sm:p-2 sm:pr-5 cursor-pointer hover:bg-black/90 transition-colors ${className}`}
+          className={`flex items-center gap-2 sm:gap-3 bg-black w-fit rounded-full p-1.5 pr-3 sm:p-1.5 sm:pr-5 cursor-pointer hover:bg-black/90 transition-colors ${className}`}
         >
           <Icon
             size={mobileSize}

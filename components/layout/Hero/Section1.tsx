@@ -9,7 +9,7 @@ import React from "react";
 const Section1 = () => {
   return (
     <div className='flex flex-col justify-between md:flex-1 min-h-[70vh] lg:min-h-0 rounded-4xl'>
-      <div className=' flex justify-between items-center px-4 py-0 md:px-8 md:py-6 '>
+      <div className=' flex justify-between items-center px-4 py-4 md:px-8 md:py-6 '>
         <div className='overflow-hidden'>
           <motion.div
             initial={{ y: "100%" }}
@@ -22,7 +22,7 @@ const Section1 = () => {
             className=' flex gap-2 items-center'
           >
             <div className='w-4 h-4 bg-black rounded-full' />
-            <p className=' text-xl md:text-2xl font-bold tracking-wider'>
+            <p className=' text-lg md:text-xl font-bold tracking-wider'>
               Monte
             </p>
           </motion.div>
@@ -69,9 +69,9 @@ const Section1 = () => {
               delay: 0.4,
             }}
             style={{
-              fontSize: "clamp(1rem, 4vw, 1.2rem)",
+              fontSize: "clamp(1rem, 4vw, 1rem)",
             }}
-            className='font-bold text-xl mb-3'
+            className='font-bold'
           >
             Building Your Dreams
           </motion.p>
@@ -123,7 +123,7 @@ const Section1 = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-between px-0 py-2 md:px-8 md:py-6'>
+      <div className='flex justify-between px-4 py-4 md:px-8 md:py-6'>
         <IconButton
           icon={Headset}
           text='Contact Us Now'
